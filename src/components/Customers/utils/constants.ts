@@ -1,0 +1,35 @@
+export const UK_COUNTIES = [
+  'Aberdeen', 'Aberdeenshire', 'Anglesey', 'Angus', 'Argyll and Bute', 'Armagh',
+  'Bath and North East Somerset', 'Bedfordshire', 'Belfast', 'Berkshire', 'Birmingham',
+  'Blaenau Gwent', 'Bradford', 'Bridgend', 'Brighton and Hove', 'Bristol',
+  'Buckinghamshire', 'Canterbury', 'Carlisle', 'Caerphilly', 'Cambridgeshire',
+  'Cardiff', 'Carmarthenshire', 'Ceredigion', 'Chelmsford', 'Cheshire', 'Chester',
+  'Chichester', 'Clackmannanshire', 'Conwy', 'Cornwall', 'Coventry', 'Cumbria',
+  'Denbighshire', 'Derbyshire', 'Devon', 'Dorset', 'Dumfries and Galloway',
+  'Dundee', 'Durham', 'East Ayrshire', 'East Dunbartonshire', 'East Lothian',
+  'East Renfrewshire', 'East Riding of Yorkshire', 'East Sussex', 'Edinburgh',
+  'Essex', 'Exeter', 'Falkirk', 'Fife', 'Flintshire', 'Glasgow', 'Gloucestershire',
+  'Greater London', 'Greater Manchester', 'Gwynedd', 'Hampshire', 'Herefordshire',
+  'Hertfordshire', 'Highlands', 'Inverclyde', 'Isle of Wight', 'Kent', 'Lancashire',
+  'Leicestershire', 'Lincolnshire', 'Liverpool', 'Londonderry', 'Merseyside',
+  'Merthyr Tydfil', 'Midlothian', 'Monmouthshire', 'Moray', 'Neath Port Talbot',
+  'Newcastle upon Tyne', 'Newport', 'Newry', 'Norfolk', 'North Ayrshire',
+  'North Lanarkshire', 'North Yorkshire', 'Northamptonshire', 'Northumberland',
+  'Nottinghamshire', 'Orkney Islands', 'Oxfordshire', 'Pembrokeshire',
+  'Perth and Kinross', 'Powys', 'Renfrewshire', 'Rhondda Cynon Taff', 'Rutland',
+  'Salford', 'Scottish Borders', 'Shetland Islands', 'Shropshire', 'Somerset',
+  'South Ayrshire', 'South Lanarkshire', 'South Yorkshire', 'Staffordshire',
+  'Stirling', 'Sunderland', 'Suffolk', 'Surrey', 'Swansea', 'Torfaen',
+  'Tyne and Wear', 'Vale of Glamorgan', 'Warwickshire', 'West Dunbartonshire',
+  'West Lothian', 'West Midlands', 'West Sussex', 'West Yorkshire',
+  'Western Isles', 'Wiltshire', 'Worcestershire', 'Wrexham'
+].sort();
+
+export const FORM_STEPS = {
+  NAMES: 1,
+  ADDRESS: 2,
+  CONTACT: 3
+} as const;
+
+export const STEP_LABELS = ['Names', 'Address', 'Contact'];
+export const TOTAL_STEPS = 3;

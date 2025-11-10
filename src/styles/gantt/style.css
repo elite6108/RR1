@@ -1,0 +1,433 @@
+.wx-toolbar {
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+  }
+
+  /* Weekend highlighting */
+  .sday {
+    background-color: rgb(223 152 215) !important;
+}
+
+  .wx-willow-dark-theme .sday {
+    background-color: rgb(175 73 163) !important;
+}
+
+  /* Expand/Collapse icons for task tree */
+  .wxi-menu-right:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .wxi-menu-down:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Alternative using CSS triangles if font icons don't work */
+  .wx-toggle-icon.wxi-menu-right:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .wx-toggle-icon.wxi-menu-down:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Dark mode for icons */
+  @media (prefers-color-scheme: dark) {
+    .wxi-menu-right:before,
+    .wx-toggle-icon.wxi-menu-right:before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23d1d5db' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+    }
+
+    .wxi-menu-down:before,
+    .wx-toggle-icon.wxi-menu-down:before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23d1d5db' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    }
+  }
+
+  /* Style the Edit button */
+  [data-id="edit-task"] .wx-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151; /* text-gray-700 */
+    background-color: #f3f4f6; /* bg-gray-100 */
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+  }
+
+  [data-id="edit-task"] .wx-button:hover {
+    background-color: #e5e7eb; /* hover:bg-gray-200 */
+  }
+
+  /* Style the Delete button */
+  [data-id="delete-task"] .wx-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #dc2626;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+  }
+
+  [data-id="delete-task"] .wx-button:hover {
+    background-color: #b91c1c;
+  }
+
+  /* Dark mode styles */
+  @media (prefers-color-scheme: dark) {
+    [data-id="edit-task"] .wx-button {
+      color: #e5e7eb; /* dark:text-gray-200 */
+      background-color: #374151; /* dark:bg-gray-700 */
+    }
+
+    [data-id="edit-task"] .wx-button:hover {
+      background-color: #4b5563; /* dark:hover:bg-gray-600 */
+    }
+
+    [data-id="delete-task"] .wx-button:hover {
+      background-color: #991b1b;
+    }
+  }
+
+  .wx-willow-dark-theme {
+    color-scheme: dark;
+
+    --wx-gantt-border: var(--wx-border);
+    --wx-gantt-form-header-border: none;
+    --wx-gantt-icon-color: #9fa1ae;
+
+    /* bars */
+    --wx-gantt-bar-font: var(--wx-font-weight) var(--wx-font-size) var(--wx-font-family);
+    --wx-gantt-bar-border-radius: 3px;
+    --wx-gantt-milestone-border-radius: 3px;
+
+    --wx-gantt-task-color: #37a9ef;
+    --wx-gantt-task-font-color: #ffffffe5;
+    --wx-gantt-task-fill-color: #098cdc;
+    --wx-gantt-task-border-color: #098cdc;
+    --wx-gantt-task-border: 1px solid transparent;
+
+    --wx-gantt-project-color: #00ba94;
+    --wx-gantt-project-font-color: #ffffffe5;
+    --wx-gantt-project-fill-color: #099f81;
+    --wx-gantt-project-border-color: #099f81;
+    --wx-gantt-project-border: 1px solid transparent;
+
+    --wx-gantt-progress-marker-height: 26px;
+    --wx-gantt-progress-border-color: #4b5359;
+
+    --wx-gantt-baseline-border-radius: 2px;
+
+    /* temp*/
+    --wx-gantt-bar-shadow: 0px 1px 2px rgba(44, 47, 60, 0.06), 0px 3px 10px rgba(44, 47, 60, 0.12);
+
+    --wx-gantt-milestone-color: #ad44ab;
+
+    --wx-gantt-select-color: #384047;
+    --wx-gantt-link-color: #9fa1ae;
+    --wx-gantt-link-marker-background: #384047;
+    --wx-gantt-link-marker-color: #9fa1ae;
+
+    /* grid */
+    --wx-grid-header-font: var(--wx-font-weight-md) var(--wx-font-size) var(--wx-font-family);
+    --wx-grid-header-font-color: var(--wx-color-font);
+    --wx-grid-header-text-transform: capitalize;
+    --wx-grid-header-shadow: none;
+
+    --wx-grid-body-font: var(--wx-font-weight) var(--wx-font-size) var(--wx-font-family);
+    --wx-grid-body-font-color: var(--wx-color-font);
+    --wx-grid-body-row-border: var(--wx-border);
+    --wx-grid-body-cell-border: 1px solid transparent;
+
+    /* timescale */
+    --wx-timescale-font: var(--wx-font-weight-md) var(--wx-font-size-sm) var(--wx-font-family);
+    --wx-timescale-font-color: var(--wx-color-font);
+    --wx-timescale-text-transform: uppercase;
+    --wx-timescale-shadow: none;
+    --wx-timescale-border: var(--wx-border);
+
+    /* grid and timescale */
+    --wx-gantt-holiday-background: #303539;
+    --wx-gantt-holiday-color: #878994;
+
+    /* markers */
+    --wx-gantt-marker-font: var(--wx-font-weight-md) var(--wx-font-size-sm) var(--wx-font-family);
+    --wx-gantt-marker-font-color: #fff;
+    --wx-gantt-marker-color: rgba(6, 189, 248, 0.77);
+
+    /* tooltips */
+    --wx-tooltip-font: var(--wx-font-weight) var(--wx-font-size) var(--wx-font-family);
+    --wx-tooltip-font-color: #e6e6e6;
+    --wx-tooltip-background: #4f525a;
+
+    /* sidebar */
+    --wx-sidebar-close-icon: #384047;
+
+    background-color: #1f2937 !important; /* Custom dark background instead of #2A2B2D */
+  }
+
+  .wx-willow-dark-theme .wx-content,
+  .wx-willow-dark-theme .wx-grid,
+  .wx-willow-dark-theme .wx-chart,
+  .wx-willow-dark-theme .wx-table {
+    /*background-color: #1f2937 !important; /* Ensure all sub-elements use the same background */
+  }
+
+  /* Optional: customize other dark mode elements */
+  /*.wx-willow-dark-theme .wx-cell {
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+  }*/
+
+  .wx-willow-dark-theme .wx-header {
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+  }
+
+  /* Dark mode progress bar colors */
+  .wx-willow-dark-theme .wx-task[data-type="summary"] .wx-progress,
+  .wx-willow-dark-theme .wx-task[data-type="summary"] .wx-progress-bar,
+  .wx-willow-dark-theme .wx-bar[data-type="summary"] .wx-progress {
+    background-color: #099F81 !important; /* Summary progress bar color */
+  }
+
+  .wx-willow-dark-theme .wx-task[data-type="task"] .wx-progress,
+  .wx-willow-dark-theme .wx-task[data-type="task"] .wx-progress-bar,
+  .wx-willow-dark-theme .wx-bar[data-type="task"] .wx-progress,
+  .wx-willow-dark-theme .wx-task:not([data-type="summary"]):not([data-type="milestone"]) .wx-progress {
+    background-color: #1F6BD9 !important; /* Task progress bar color */
+  }
+
+  /* Alternative selectors in case the above don't work */
+  .wx-willow-dark-theme .wx-progress {
+    background-color: #1F6BD9 !important; /* Default to task color */
+  }
+
+  .wx-willow-dark-theme .wx-summary-progress,
+  .wx-willow-dark-theme .wx-task-summary .wx-progress {
+    background-color: #099F81 !important; /* Summary progress bar color */
+  }
+
+  .wx-sidebar.x2-j8yl6f {
+    display: none !important;
+  }
+  .wx-sidebar{
+    display: none !important;
+  }
+  .wx-table-wrapper.x2-dnsr36 {
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  .wx-grid, .wx-chart {
+    border-radius: 0px !important;
+}
+
+  .wx-table.x2-dnsr36>.wx-grid .wx-header .wx-cell:first-child {
+    border-top-left-radius: 10px;
+  }
+
+  .wx-content.x2-1dzadpy {
+    border-radius: 10px;
+    box-shadow: inset 0 0px 9px 0px #c9c7c7;
+  }
+
+  /* Additional Gantt container styling for 10px border radius */
+  .wx-gantt {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .wx-willow-theme,
+  .wx-willow-dark-theme {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  /* Ensure the grid and chart areas respect the border radius */
+  .wx-grid,
+  .wx-chart {
+    border-radius: 10px;
+  }
+
+  /* Apply to the main table structure */
+  .wx-table {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  
+  .wx-willow-dark-theme .wx-row {
+    background: #1f2937 !important;
+}
+
+.wx-willow-dark-theme .wx-table-wrapper {
+  background: #1f2937;
+}
+
+/* Dark mode scrollbar styling for chart area */
+.wx-willow-dark-theme .wx-chart::-webkit-scrollbar-track {
+  background: #1f2937 !important;
+}
+
+.wx-willow-dark-theme .wx-chart::-webkit-scrollbar {
+  background: #1f2937 !important;
+}
+
+.wx-willow-dark-theme .wx-chart::-webkit-scrollbar-thumb {
+  background: #374151 !important;
+  border-radius: 4px;
+}
+
+.wx-willow-dark-theme .wx-chart::-webkit-scrollbar-thumb:hover {
+  background: #4b5563 !important;
+}
+
+/* Also apply to any scrollable containers within the chart */
+.wx-willow-dark-theme .wx-chart *::-webkit-scrollbar-track {
+  background: #1f2937 !important;
+}
+
+.wx-willow-dark-theme .wx-chart *::-webkit-scrollbar {
+  background: #1f2937 !important;
+}
+
+.wx-milestone.x2-1qryx5p .wx-content.x2-1qryx5p {
+  background-color: #AD44AB !important;
+}
+
+
+
+.wx-task.x2-1qryx5p .wx-progress-percent.x2-1qryx5p {
+  background-color: #1F6BD9!important;
+}
+
+.wx-summary.x2-1qryx5p .wx-progress-percent.x2-1qryx5p {
+  background-color: #099F81 !important;
+}
+
+/* Summary task bar itself */
+.wx-summary.x2-1qryx5p.x2-1qryx5p {
+  background-color: #099F81 !important;
+}
+
+
+/* Task bar itself */
+.wx-task.x2-1qryx5p.x2-1qryx5p {
+  background-color: #1F6BD9 !important;
+}
+
+.wx-willow-dark-theme .wx-table.x2-dnsr36>.wx-grid .wx-header .wx-cell {
+  background: #1F2937;
+}
+/*.wx-willow-dark-theme .wx-area.x2-1ff484e {
+  background: #171e29;
+}*/
+
+/* Mobile responsive styles for Gantt chart */
+@media (max-width: 768px) {
+  .wx-table-wrapper.x2-dnsr36 {
+    min-width: 280px !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+  }
+  
+  .wx-gantt {
+    overflow-x: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  
+  .wx-grid {
+    min-width: 280px !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+  }
+  
+  .wx-table {
+    min-width: 280px !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+    display: table !important;
+  }
+  
+  .wx-content.x2-1dzadpy {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    min-height: 400px !important;
+  }
+  
+  /* Force the table section to be visible */
+  .wx-table.x2-dnsr36 {
+    display: table !important;
+    min-width: 280px !important;
+    width: 280px !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  
+  /* Ensure the chart section doesn't hide the table */
+  .wx-chart {
+    flex-grow: 1 !important;
+    min-width: 300px !important;
+    margin-left: 0 !important;
+  }
+  
+  /* Force visibility of the table header and cells */
+  .wx-table.x2-dnsr36 .wx-grid .wx-header,
+  .wx-table.x2-dnsr36 .wx-grid .wx-body {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .wx-table.x2-dnsr36 .wx-grid .wx-header .wx-cell,
+  .wx-table.x2-dnsr36 .wx-grid .wx-body .wx-cell {
+    display: table-cell !important;
+    visibility: visible !important;
+  }
+}

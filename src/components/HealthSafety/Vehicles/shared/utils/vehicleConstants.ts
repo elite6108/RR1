@@ -1,0 +1,41 @@
+export const UK_VEHICLE_BRANDS = [
+  'Aston Martin',
+  'Audi',
+  'Bentley',
+  'BMW',
+  'Citroen',
+  'Dacia',
+  'Fiat',
+  'Ford',
+  'Honda',
+  'Hyundai',
+  'Jaguar',
+  'Kia',
+  'Land Rover',
+  'Lexus',
+  'Mazda',
+  'Mercedes-Benz',
+  'Mini',
+  'Mitsubishi',
+  'Nissan',
+  'Peugeot',
+  'Porsche',
+  'Renault',
+  'Seat',
+  'Skoda',
+  'Suzuki',
+  'Tesla',
+  'Toyota',
+  'Vauxhall',
+  'Volkswagen',
+  'Volvo'
+];
+
+export const SERVICE_INTERVAL_UNITS = [
+  'Miles',
+  'Hours',
+  'Days',
+  'Weeks',
+  'Months',
+  'Years'
+];

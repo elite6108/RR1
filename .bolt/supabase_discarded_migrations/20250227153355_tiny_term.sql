@@ -1,0 +1,62 @@
+-- Create risk_assessments table
+CREATE TABLE IF NOT EXISTS risk_assessments (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id uuid REFERENCES auth.users NOT NULL,
+  ra_id text UNIQUE NOT NULL,
+  name text NOT NULL,
+  content jsonb NOT NULL,
+  created_at timestamptz DEFAULT now(),
+  review_date timestamptz NOT NULL,
+  updated_at timestamptz DEFAULT now()
+);
+
+-- Enable Row Level Security
+ALTER TABLE risk_assessments ENABLE ROW LEVEL SECURITY;
+
+-- Create function to generate sequential RA numbers
+CREATE OR REPLACE FUNCTION generate_ra_number()
+RETURNS text AS $$
+DECLARE
+  last_number integer;
+  new_number text;
+BEGIN
+  -- Get the last number from existing RA numbers
+  SELECT COALESCE(MAX(NULLIF(regexp_replace(ra_id, '^OPG-RA-', ''), '')), '000000')::integer
+  INTO last_number
+  FROM risk_assessments
+  WHERE ra_id ~ '^OPG-RA-\d+$';
+
+  -- Generate new number with OPG-RA- prefix
+  new_number := 'OPG-RA-' || LPAD((last_number + 1)::text, 6, '0');
+  
+  RETURN new_number;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Create trigger to automatically generate RA number
+CREATE OR REPLACE FUNCTION set_ra_number()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.ra_id := generate_ra_number();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_set_ra_number
+  BEFORE INSERT ON risk_assessments
+  FOR EACH ROW
+  EXECUTE FUNCTION set_ra_number();
+
+-- Create trigger to update updated_at timestamp
+CREATE TRIGGER update_risk_assessments_updated_at
+  BEFORE UPDATE ON risk_assessments
+  FOR EACH ROW
+  EXECUTE PROCEDURE update_updated_at_column();
+
+-- Create policy for authenticated users
+CREATE POLICY "Authenticated users can access risk_assessments"
+  ON risk_assessments
+  FOR ALL
+  TO authenticated
+  USING (true)
+  WITH CHECK (true);

@@ -1,0 +1,1 @@
+export const SECTION1_4_HEALTH_SAFETY_WELFARE_TEMPLATE = '<div class="con"><p style="text-align: justify; ">Adequate provision shall be made for the Welfare needs of employees whilst carrying out their tasks and duties and any hazard to health associated with the work shall be the subject of strict precautionary measures.</p></div>';

@@ -1,0 +1,64 @@
+.fixed.inset-0.bg-gray-600.bg-opacity-50.dark\:bg-gray-900.dark\:bg-opacity-50.overflow-y-auto.h-full.w-full.flex.items-start.sm\:items-center.justify-center.p-4.z-50 {
+    height: auto;
+}
+
+
+.h-screen {
+    height: auto;
+}
+
+.fixed.inset-0.z-\[9999\].overflow-y-auto {
+    --tw-bg-opacity: 0.5;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1));
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: black;
+}
+
+::selection {
+  color: white;
+  background: black;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background: #d9d9d9;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background: #d9d9d9;
+}
+::-webkit-scrollbar-thumb {
+    background: #4F46E5;
+}
+::-webkit-scrollbar-track {
+    background: #d9d9d9;
+}
+@media (min-width: 768px) {
+    .md\:ml-16 {
+        margin-left: 0rem
+}}
+@media (min-width: 1024px) {
+    .lg\:ml-16 {
+        margin-left: 0rem;
+    }
+}
+
+.bg-white.dark\:bg-gray-800.shadow-lg.overflow-hidden.sm\:rounded-lg {
+    border-radius: 10px !important;
+}
+table.rdp-month_grid {
+    width: 100% !important;
+}
+.hide {display:none !important}
+
+canvas.border.border-gray-200.rounded.bg-white {
+    width: 100%;
+}

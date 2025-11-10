@@ -1,0 +1,420 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode styles */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+.dark .bg-white {
+  background-color: #1f2937;
+}
+
+.dark .text-gray-900 {
+  color: #ffffff;
+}
+
+.dark .text-gray-500,
+.dark .text-gray-600,
+.dark .text-gray-700 {
+  color: #d1d5db;
+}
+
+.dark .border-gray-200,
+.dark .border-gray-300 {
+  border-color: #374151;
+}
+
+.dark .hover\:bg-gray-100:hover {
+  background-color: #374151;
+}
+
+.dark .bg-gray-50,
+.dark .bg-gray-100 {
+  background-color: #171e29;
+}
+
+.dark .bg-gray-200 {
+  background-color: #1f2937;
+}
+
+.dark .bg-gray-300 {
+  background-color: #374151;
+}
+
+.dark .bg-gray-400 {
+  background-color: #4b5563;
+}
+
+.dark .bg-gray-500 {
+  background-color: #6b7280;
+}
+
+.dark .bg-gray-600 {
+  background-color: #4b5563;
+}
+
+.dark .bg-gray-700 {
+  background-color: #374151;
+}
+
+.dark .bg-gray-800 {
+  background-color: #1f2937;
+}
+
+.dark .bg-gray-900 {
+  background-color: #111827;
+}
+
+/* Input and form styles in dark mode */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #29303b;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: #6366f1;
+  ring-color: #6366f1;
+}
+
+/* Button styles in dark mode */
+.dark button.bg-white {
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+.dark button:hover.bg-white {
+  background-color: #374151;
+}
+
+/* Card and modal styles in dark mode */
+.dark .shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.dark .bg-opacity-50 {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* Table styles in dark mode */
+.dark table {
+  background-color: #1f2937;
+}
+
+.dark tbody tr:hover {
+  background-color: #374151;
+}
+
+.dark th {
+  color: #9ca3af;
+}
+
+.dark td {
+  color: #ffffff;
+}
+
+/* Breadcrumb styles in dark mode */
+.dark .breadcrumb {
+  color: #ffffff;
+}
+
+.dark .breadcrumb:hover {
+  color: #d1d5db;
+}
+
+/* Icon colors in dark mode */
+.dark .text-gray-400 svg {
+  color: #9ca3af;
+}
+
+/* Quill Editor Styles */
+.quill {
+  display: flex;
+  flex-direction: column;
+  height: 24rem; /* h-96 equivalent */
+}
+
+.ql-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.ql-editor {
+  min-height: 100%;
+  height: 100%;
+  max-height: none;
+  font-size: 16px;
+}
+
+.ql-toolbar {
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+}
+
+.ql-container {
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+/* Quill Theme Customization */
+.ql-snow.ql-toolbar button:hover,
+.ql-snow .ql-toolbar button:hover,
+.ql-snow.ql-toolbar button:focus,
+.ql-snow .ql-toolbar button:focus,
+.ql-snow.ql-toolbar button.ql-active,
+.ql-snow .ql-toolbar button.ql-active,
+.ql-snow.ql-toolbar .ql-picker-label:hover,
+.ql-snow .ql-toolbar .ql-picker-label:hover,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active,
+.ql-snow.ql-toolbar .ql-picker-item:hover,
+.ql-snow .ql-toolbar .ql-picker-item:hover,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected {
+  color: #4f46e5;
+}
+
+.ql-snow.ql-toolbar button:hover .ql-fill,
+.ql-snow .ql-toolbar button:hover .ql-fill,
+.ql-snow.ql-toolbar button:focus .ql-fill,
+.ql-snow .ql-toolbar button:focus .ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-fill,
+.ql-snow .ql-toolbar button.ql-active .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+.ql-snow.ql-toolbar button:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar button:focus .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button:focus .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill {
+  fill: #4f46e5;
+}
+
+.ql-snow.ql-toolbar button:hover .ql-stroke,
+.ql-snow .ql-toolbar button:hover .ql-stroke,
+.ql-snow.ql-toolbar button:focus .ql-stroke,
+.ql-snow .ql-toolbar button:focus .ql-stroke,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+.ql-snow.ql-toolbar button:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar button:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar button:focus .ql-stroke-miter,
+.ql-snow .ql-toolbar button:focus .ql-stroke-miter,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke-miter,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter {
+  stroke: #4f46e5;
+}
+
+select.flex-1.px-3.py-2.border.border-gray-300.rounded-md.dark\:bg-\[\#29303b\].dark\:border-gray-600 {
+  width: 100%;
+}
+
+select.flex-1.px-3.py-2.border.border-gray-300.rounded-md.dark\:bg-\[\#29303b\].dark\:border-gray-600 {
+  width: 100%;
+}
+
+/* OVERRIDES*/
+/* WORKER PROFILE WIDT */
+.relative.transform.overflow-hidden.rounded-lg.bg-white.dark\:bg-gray-800.text-left.shadow-xl.transition-all.sm\:my-8.sm\:w-full.sm\:max-w-lg {
+  width: 100%;
+}
+
+.fixed.inset-0.bg-gray-600 {
+    margin-top: 0;
+}
+.space-y-4.fullw {
+    width: 100%;
+}
+
+/* TASK */
+@media (max-width: 640px) {
+    .singlerow {
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+    }
+    .fullw {
+    width: 100% !important;
+}
+
+.grid.grid-cols-1.md\:grid-cols-2.gap-4.singlerow {
+    width: 100%;
+}
+
+.bullets {
+    display: none !important;
+}
+  .flex.justify-between.items-center.h-12 {
+    display: flex;
+    align-items: center;}
+
+  .text-lg.font-medium.text-gray-900.mt-1.text-left {
+    display: none;
+}
+}
+
+
+.lesspadd {
+    padding: 0rem !important;
+}
+
+.p-5 {
+    height: 100%;
+}
+
+/* OVERLAYS */
+.dark .bg-gray-500 {
+    background-color: #16192182;
+    backdrop-filter: blur(5px);
+}
+.bg-gray-500 {
+    backdrop-filter: blur(5px);
+}
+
+.dark .bg-opacity-50 {
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+    backdrop-filter: blur(5px);
+}
+
+.bg-opacity-50 {
+    --tw-bg-opacity: 0.5;
+    backdrop-filter: blur(5px);
+}
+
+/* Subcontractors */
+.searchbar {
+    max-width: 100% !important;
+}
+/* Uploadt Sign Artwork */
+/*@media (min-width: 1280px) {
+    .xl\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+}*/
+.min-h-screen.bg-gray-50.dark\:bg-gray-900.py-8.px-4.sm\:px-6.lg\:px-8 {
+    border-radius: 20px;
+    background: #f3f4f6;
+    padding: 0px;
+}
+
+.fixed.inset-0.bg-black.bg-opacity-50.flex.items-center.justify-center.z-50 {
+    margin-top: 0 !important;
+}
+
+.min-h-screen.bg-gray-50.dark\:bg-\[\#171E29\].py-8.px-4.sm\:px-6.lg\:px-8 {
+    padding: 0;
+}
+
+/* INDICATOR MODAL LINE */
+.flex-1.h-1.mx-2.bg-gray-200 {
+    background: #191c21;
+}
+
+/*.bg-gray-50 {
+    background-color: rgb(243 244 246) !important;
+}*/
+svg.lucide.h-6.w-6.text-gray-400 {
+    color: #4F46E5;
+}
+
+.dark svg.lucide.h-6.w-6.text-gray-400 {
+    color: #ffffff;
+}
+
+svg.lucide.h-8.w-8.text-gray-400.dark\:text-white.flex-shrink-0 {
+    color: #4F46E5;
+}
+
+button.bg-white.dark\:bg-\[\#1F2937\].overflow-hidden.shadow.rounded-lg.transition-transform.hover\:scale-105.hover\:bg-gray-50.dark\:hover\:bg-\[rgb\(79\,70\,229\)\].focus\:outline-none.focus\:ring-2.focus\:ring-offset-2.focus\:ring-indigo-500:hover {border: 1px solid #3b81ff !important;}
+
+button.bg-white.dark\:bg-\[\#1F2937\].overflow-hidden.shadow.rounded-lg.transition-transform.hover\:scale-105.hover\:bg-gray-50.dark\:hover\:bg-\[rgb\(79\,70\,229\)\].focus\:outline-none.focus\:ring-2.focus\:ring-offset-2.focus\:ring-indigo-500 {border: 1px solid transparent !important;}
+
+button.bg-white.overflow-hidden.shadow.rounded-lg.transition-transform.hover\:scale-105.focus\:outline-none.focus\:ring-2.focus\:ring-offset-2.focus\:ring-indigo-500  {border: 1px solid transparent !important;}
+
+button.bg-white.overflow-hidden.shadow.rounded-lg.transition-transform.hover\:scale-105.focus\:outline-none.focus\:ring-2.focus\:ring-offset-2.focus\:ring-indigo-500:hover  {border: 1px solid #3b81ff !important;}
+
+svg.lucide.w-5.text-gray-400.dark\:text-gray-300.mr-3 {
+    color: #4F46E5;
+}
+
+/* Modal content styles */
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose p {
+  margin-bottom: 10px;
+}
+
+button.bg-green-600.hover\:bg-green-700.text-white {
+    border-radius: 5px;
+  font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.bg-white.dark\:bg-gray-800.overflow-hidden.shadow.rounded-lg:hover {
+    border: 1px solid #3b81ff !important;
+}
+.bg-white.dark\:bg-gray-800.overflow-hidden.shadow.rounded-lg {
+    border: 1px solid transparent !important;
+}
+.max-w-7xl {
+    max-width: 100rem;
+}
+
+@media (min-width: 640px) {
+    .sm\:items-center {
+        align-items: start;
+    }
+}
+.sm\:items-center {
+        align-items: start;
+}

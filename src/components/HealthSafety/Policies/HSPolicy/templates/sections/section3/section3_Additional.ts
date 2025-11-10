@@ -1,0 +1,1 @@
+export const SECTION3_ADDITIONAL_TEMPLATE = '';

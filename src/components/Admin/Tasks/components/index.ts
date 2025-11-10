@@ -1,0 +1,12 @@
+export { TaskHeader } from './TaskHeader';
+export { TaskStatistics } from './TaskStatistics';
+export { BoardModal } from './BoardModal';
+export { DeleteConfirmModal } from './DeleteConfirmModal';
+export { TaskModal } from './TaskModal';
+export { TaskBoard } from './TaskBoard';
+export { TaskListView } from './TaskListView';
+export { TaskSummaryView } from './TaskSummaryView';
+export { TaskInfoTab } from './TaskInfoTab';
+export { TaskNotesTab } from './TaskNotesTab';
+export { TaskAttachmentsTab } from './TaskAttachmentsTab';
+export { TaskChatTab } from './TaskChatTab';
