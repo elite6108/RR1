@@ -3,7 +3,7 @@ import React from 'react';
 interface TextInputProps {
   id?: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (value: string) => void;
   placeholder?: string;
   disabled?: boolean;
   type?: 'text' | 'email' | 'tel' | 'url' | 'password';
@@ -28,7 +28,7 @@ export function TextInput({
       type={type}
       id={id}
       value={value}
-      onChange={onChange}
+      onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
       disabled={disabled}
       maxLength={maxLength}

@@ -3,7 +3,7 @@ import React from 'react';
 interface DateInputProps {
   id?: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (value: string) => void;
   disabled?: boolean;
   min?: string;
   max?: string;
@@ -26,7 +26,7 @@ export function DateInput({
       type="date"
       id={id}
       value={value}
-      onChange={onChange}
+      onChange={(e) => onChange(e.target.value)}
       disabled={disabled}
       min={min}
       max={max}

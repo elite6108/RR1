@@ -74,6 +74,8 @@ export function HealthSafetyDashboard({
   setShowGuidance,
   setShowCDM,
   setShowPPE,
+  setShowSiteInspections,
+  setShowWorkshop,
   overdueCounts 
 }: HealthSafetyDashboardProps) {
   console.log("HealthSafetyDashboard received overdueCounts.dse:", overdueCounts.dse);

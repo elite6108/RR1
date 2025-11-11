@@ -3,7 +3,7 @@ import React from 'react';
 interface TextAreaProps {
   id?: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onChange: (value: string) => void;
   placeholder?: string;
   disabled?: boolean;
   rows?: number;
@@ -27,7 +27,7 @@ export function TextArea({
     <textarea
       id={id}
       value={value}
-      onChange={onChange}
+      onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
       disabled={disabled}
       rows={rows}

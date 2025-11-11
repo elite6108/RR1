@@ -9,7 +9,7 @@ interface SelectOption {
 interface SelectProps {
   id?: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange: (value: string) => void;
   options: SelectOption[];
   placeholder?: string;
   disabled?: boolean;
@@ -31,7 +31,7 @@ export function Select({
     <select
       id={id}
       value={value}
-      onChange={onChange}
+      onChange={(e) => onChange(e.target.value)}
       disabled={disabled}
       className={`${baseClasses} ${className}`}
     >

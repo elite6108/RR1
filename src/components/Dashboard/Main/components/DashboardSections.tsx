@@ -943,6 +943,8 @@ export function DashboardSections({
         setShowOrganisationChart={setShowOrganisationChart}
         setShowTrainingMatrix={setShowTrainingMatrix}
         setShowGuidance={setShowGuidance}
+        setShowSiteInspections={setShowSiteInspections}
+        setShowWorkshop={setShowWorkshop}
         overdueCounts={{
           riskAssessments: overdueCounts.overdueRiskAssessmentsCount || 0,
           drivers: overdueCounts.overdueDriversCount || 0,
